@@ -1,6 +1,18 @@
-h1 HELLO WORLD
+html
+  head
+    script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"
+    script type="text/javascript" src="message.js"
 
-p
-  ' We are running in the
-  =' ENV['RACK_ENV']
-  ' environment
+body
+  erb:
+    <!-- <%= ENV.inspect %> -->
+
+  h1 MSGTEST
+
+  form#message-form method="post" action="/message"
+    label for="body" Send to all:
+    input type="text" name="body"
+
+    input type="submit" value="Send!"
+
+  ul#messages

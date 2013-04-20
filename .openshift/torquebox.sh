@@ -51,7 +51,12 @@ export JBOSS_MODULEPATH_ADD=$TORQUEBOX_HOME/jboss/modules/system/layers/base:$TO
 function bundle_install() {
     if [ ! -d "${OPENSHIFT_REPO_DIR}/.bundle" ] && [ -f "${OPENSHIFT_REPO_DIR}/Gemfile" ]; then
         pushd ${OPENSHIFT_REPO_DIR} > /dev/null
-        jruby -J-Xmx256m -J-Dhttps.protocols=SSLv3 -S bundle install
+
+        mkdir -p "${OPENSHIFT_DATA_DIR}/bundle"
+        mkdir -p "${OPENSHIFT_REPO_DIR}/vendor"
+        ln -sf "${OPENSHIFT_DATA_DIR}/bundle" "${OPENSHIFT_REPO_DIR}/vendor/bundle"
+
+        jruby -J-Xmx256m -J-Dhttps.protocols=SSLv3 -S bundle install --deployment --path vendor/bundle --without development
         popd > /dev/null
     fi
 }

@@ -9,3 +9,5 @@ gem "coffee-script", "~>2.2.0"
 gem "therubyrhino", "~>2.0.2", platforms: [:jruby]
 
 gem "torquebox-messaging", "~>2.3.0"
+gem "capistrano", "~>2.14.2"
+gem "torquebox-capistrano-support", "~>2.3.0"

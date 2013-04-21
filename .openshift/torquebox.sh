@@ -14,7 +14,7 @@
 # throughout the system.
 
 FORCE_BUILD=false               # set to true to force build
-VERSION=LATEST
+VERSION=2.3.0
 
 # Determine whether we're getting a release or an incremental 
 if [[ ${VERSION} =~ \. ]]; then

@@ -521,7 +521,7 @@
         <subsystem xmlns="urn:jboss:domain:torquebox-web:1.0"/>
         <subsystem xmlns="urn:jboss:domain:polyglot-hasingleton:1.0"/>
         <subsystem xmlns="urn:jboss:domain:polyglot-cache:1.0"/>
-        <subsystem xmlns="urn:jboss:domain:polyglot-stomp:1.0" socket-binding="stomp" secure-socket-binding="stomp-secure"/>
+        <subsystem xmlns="urn:jboss:domain:polyglot-stomp:1.0" socket-binding="stomp"/>
     </profile>
 
     <interfaces>

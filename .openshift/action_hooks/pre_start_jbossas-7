@@ -20,3 +20,5 @@ source $OPENSHIFT_REPO_DIR/.openshift/torquebox.sh
 
 bundle_install
 #db_migrate
+
+rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/deployments/ ${OPENSHIFT_HOMEDIR}/jbossas-7/jbossas-7/standalone/deployments/
